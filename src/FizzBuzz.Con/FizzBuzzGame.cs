@@ -1,3 +1,5 @@
+using FizzBuzz.Core;
+
 namespace FizzBuzz.Con;
 
 public static class FizzBuzzGame
@@ -22,6 +24,7 @@ public static class FizzBuzzGame
 
     private static void Play()
     {
+        var fizzerBuzzer = new FizzerBuzzer();
         while (true)
         {
             Console.WriteLine("Give me a number, any number");
@@ -32,14 +35,15 @@ public static class FizzBuzzGame
                 return;
             }
 
-            if (!int.TryParse(input, out var isNumber))
+            if (!int.TryParse(input, out var parsedNumber))
             {
                 Console.WriteLine("You did not input a number, let's give that another try!");
                 continue;
             }
 
+            var response = fizzerBuzzer.Evaluate(parsedNumber);
             Console.WriteLine("");
-            Console.WriteLine("Well, my response to you is " + isNumber);
+            Console.WriteLine("Well, my response to you is " + response);
             Console.WriteLine("-------");
             Console.WriteLine("Let's do that again!");
             Console.WriteLine("");

@@ -9,4 +9,8 @@
         <RootNamespace>FizzBuzz.Con</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\FizzBuzz.Core\FizzBuzz.Core.csproj" />
+    </ItemGroup>
+
 </Project>
